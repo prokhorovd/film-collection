@@ -1,13 +1,19 @@
-<div class="film-card">
-  <img [src]="film().posterUrl" [alt]="film().title" />
+<article class="film-card">
+  <div class="film-poster">
+    <img [src]="film().posterUrl" [alt]="film().title" />
+    <span class="film-rating">★ {{ film().rating }}</span>
+    <button
+      class="film-fav"
+      [class.is-active]="film().isFavorite"
+      (click)="onToggleFavorite($event)"
+    >{{ film().isFavorite ? '♥' : '♡' }}</button>
+  </div>
 
-  <h2>{{ film().title }}</h2>
-  <p>{{ film().year }}</p>
-  <p>{{ film().genre }}</p>
-  <p>{{ film().rating }}</p>
-  <p>{{ duration() }}</p>
-
-  <button (click)="onToggleFavorite($event)">
-    {{ film().isFavorite ? '★' : '☆' }}
-  </button>
-</div>
+  <div class="film-info">
+    <h2 class="film-title">{{ film().title }}</h2>
+    <p class="film-meta">
+      <span class="film-genre">{{ film().genre }}</span>
+      <span>{{ film().year }} · {{ duration() }}</span>
+    </p>
+  </div>
+</article>
