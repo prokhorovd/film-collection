@@ -1,20 +1,19 @@
 .footer {
-  margin-top: 40px;
-  padding: 16px 24px;
-
+  padding: 18px var(--page-x);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border-top: 1px solid #eee;
-  font-size: 14px;
+  background: var(--header-bg);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer a {
   text-decoration: none;
-  color: #1976d2;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color var(--t);
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: #ffffff;
 }

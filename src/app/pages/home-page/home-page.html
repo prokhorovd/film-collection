@@ -1,25 +1,30 @@
-<input
-  appAutofocus
-  class="films-search"
-  type="text"
-  placeholder="Search"
-  [value]="searchQuery()"
-  (input)="onSearchChange($event)"
-/>
-<ul class="films-grid">
-  @for (film of filteredFilms(); track film.id) {
-    <li>
-      <app-film-card
-        [routerLink]="['/films', film.id]"
-        [film]="film"
-        (favoriteToggle)="toggleFavorite($event)"
-        [duration]="film.duration | duration"
-      />
-    </li>
-  }
-  @if (filteredFilms().length === 0) {
-    <li>
-      <p>Nothing found</p>
-    </li>
-  }
-</ul>
+<section class="catalog">
+  <div class="search-wrap">
+    <input
+      appAutofocus
+      class="catalog-search"
+      type="text"
+      placeholder="Search films…"
+      [value]="searchQuery()"
+      (input)="onSearchChange($event)"
+    />
+  </div>
+
+  <ul class="films-grid">
+    @for (film of filteredFilms(); track film.id) {
+      <li>
+        <app-film-card
+          [routerLink]="['/films', film.id]"
+          [film]="film"
+          (favoriteToggle)="toggleFavorite($event)"
+          [duration]="film.duration | duration"
+        />
+      </li>
+    }
+    @if (filteredFilms().length === 0) {
+      <li class="films-empty">
+        <p>Nothing found</p>
+      </li>
+    }
+  </ul>
+</section>

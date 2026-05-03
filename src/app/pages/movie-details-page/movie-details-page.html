@@ -1,23 +1,36 @@
 @if (film(); as film) {
   <article class="movie-details">
-    <img [src]="film.posterUrl" [alt]="film.title" />
+    <div class="movie-poster-wrap">
+      <img class="movie-poster" [src]="film.posterUrl" [alt]="film.title" />
+    </div>
 
     <div class="movie-info">
-      <h1>{{ film.title }}</h1>
+      <div class="movie-tags">
+        <span class="movie-genre-tag">{{ film.genre }}</span>
+        <span class="movie-year">{{ film.year }}</span>
+      </div>
 
-      <p><strong>Year:</strong> {{ film.year }}</p>
-      <p><strong>Genre:</strong> {{ film.genre }}</p>
-      <p><strong>Rating:</strong> {{ film.rating }}</p>
-      <p><strong>Duration:</strong> {{ film.duration | duration }}</p>
+      <h1 class="movie-title">{{ film.title }}</h1>
 
-      <p class="movie-description">
-        {{ film.description }}
-      </p>
+      <div class="movie-stats">
+        <div class="movie-stat">
+          <span class="movie-stat-label">Rating</span>
+          <span class="movie-stat-rating">★ {{ film.rating }}</span>
+        </div>
+        <div class="movie-stat">
+          <span class="movie-stat-label">Duration</span>
+          <span class="movie-stat-value">{{ film.duration | duration }}</span>
+        </div>
+      </div>
 
-      <a class="movie-back" routerLink="/">← Back</a>
+      <p class="movie-description">{{ film.description }}</p>
+
+      <a class="movie-back" routerLink="/">← Back to catalog</a>
     </div>
   </article>
 } @else {
-  <p>There's no such film</p>
-  <a routerLink="/">Back to catalog</a>
+  <div class="movie-not-found">
+    <p>Film not found</p>
+    <a routerLink="/">← Back to catalog</a>
+  </div>
 }
