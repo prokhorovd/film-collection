@@ -8,6 +8,7 @@ import { Film } from '../../film.interface';
 })
 export class FilmCard {
   readonly film = input.required<Film>();
+  readonly duration = input.required<string>();
 
   readonly favoriteToggle = output<number>();
 

@@ -9,7 +9,11 @@
 <ul class="films-grid">
   @for (film of filteredFilms(); track film.id) {
     <li>
-      <app-film-card [film]="film" (favoriteToggle)="toggleFavorite($event)" />
+      <app-film-card
+        [film]="film"
+        (favoriteToggle)="toggleFavorite($event)"
+        [duration]="film.duration | duration"
+      />
     </li>
   }
   @if (filteredFilms().length === 0) {

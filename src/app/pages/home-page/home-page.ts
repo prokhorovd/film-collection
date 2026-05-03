@@ -2,10 +2,11 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FilmCard } from '../../features/films/components/film-card/film-card';
 import { FilmService } from '../../features/films/film.service';
 import { Autofocus } from '../../shared/directives/autofocus';
+import { DurationPipe } from '../../shared/pipes/duration-pipe';
 
 @Component({
   selector: 'app-home-page',
-  imports: [FilmCard, Autofocus],
+  imports: [FilmCard, Autofocus, DurationPipe],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
