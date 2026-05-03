@@ -1,7 +1,19 @@
+<input
+  class="films-search"
+  type="text"
+  placeholder="Search"
+  [value]="searchQuery()"
+  (input)="onSearchChange($event)"
+/>
 <ul class="films-grid">
-  @for (film of films(); track film.id) {
+  @for (film of filteredFilms(); track film.id) {
     <li>
       <app-film-card [film]="film" (favoriteToggle)="toggleFavorite($event)" />
+    </li>
+  }
+  @if (filteredFilms().length === 0) {
+    <li>
+      <p>Nothing found</p>
     </li>
   }
 </ul>
