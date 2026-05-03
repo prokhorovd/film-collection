@@ -7,7 +7,7 @@
   <p>{{ film().rating }}</p>
   <p>{{ duration() }}</p>
 
-  <button (click)="onToggleFavorite()">
+  <button (click)="onToggleFavorite($event)">
     {{ film().isFavorite ? '★' : '☆' }}
   </button>
 </div>

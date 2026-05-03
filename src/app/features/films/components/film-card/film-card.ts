@@ -12,7 +12,9 @@ export class FilmCard {
 
   readonly favoriteToggle = output<number>();
 
-  onToggleFavorite(): void {
+  onToggleFavorite(event: MouseEvent): void {
+    event.stopPropagation();
+    event.preventDefault();
     this.favoriteToggle.emit(this.film().id);
   }
 }

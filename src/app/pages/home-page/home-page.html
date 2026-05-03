@@ -10,6 +10,7 @@
   @for (film of filteredFilms(); track film.id) {
     <li>
       <app-film-card
+        [routerLink]="['/films', film.id]"
         [film]="film"
         (favoriteToggle)="toggleFavorite($event)"
         [duration]="film.duration | duration"
