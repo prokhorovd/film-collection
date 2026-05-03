@@ -1,59 +1,84 @@
-# FilmCollection
+# Film Collection
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+## Description
 
-## Development server
+Film Collection is a simple Angular application that demonstrates core Angular concepts using standalone components and Signals.
 
-To start a local development server, run:
+The application allows users to browse a list of films, search by title, mark films as favorites, and view detailed information about each film.
+
+---
+
+## Features
+
+- Film catalog (grid layout)
+- Search by title (real-time filtering)
+- Add/remove favorites
+- Film details page
+- Breadcrumbs navigation
+- Custom autofocus directive
+- Custom duration pipe
+- 404 page for unknown routes
+
+---
+
+## Tech Stack
+
+- Angular (standalone components)
+- Angular Signals (state management)
+- Angular Router
+- TypeScript (strict mode)
+- CSS (no UI libraries)
+
+---
+
+## Project Structure
+
+```text
+src/app/
+  layout/          // header, footer, breadcrumbs
+  pages/           // home, details, about, 404
+  features/films/  // film domain (service, types, mock data, components)
+  shared/          // directives and pipes
+```
+
+---
+
+## Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Notes
 
-## Building
+- The project does not use RxJS — all reactivity is implemented with Angular Signals.
+- Film data is mocked and stored locally.
+- The application uses standalone components instead of NgModules.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Prokhorov Dmitry
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## GitHub
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://github.com/prokhorovd
