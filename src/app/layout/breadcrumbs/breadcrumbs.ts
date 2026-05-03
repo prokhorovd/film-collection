@@ -24,7 +24,14 @@ export class Breadcrumbs {
     const [, segment, id] = this.router.url.split('/');
 
     if (!segment) {
-      return [{ label: 'Home' }];
+      return [{ label: 'Home', url: '/' }];
+    }
+
+    if (segment === 'about' && !id) {
+      return [
+        { label: 'Home', url: '/' },
+        { label: 'About', url: '' },
+      ];
     }
 
     if (segment === 'films' && id) {
